@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const generateREADME = (answers) =>
 `
-<i>${answers.license}</i>
+<i style="float: right;">${answers.license}</i>
 # ${answers.projectName}
 
 ## Description
@@ -17,7 +17,7 @@ ${answers.description}
 * License
 * Questions
 
-##Installation
+## Installation
 ${answers.installation}
 
 ## Usage
@@ -33,8 +33,8 @@ ${answers.tests}
 The application is covered under ${answers.license}
 
 ## Questions
-${answers.username}
-<b>You can reach me with additional questions at:</b>
+<b>${answers.username}</b> <br>
+You can reach me with additional questions at: <br>
 ${answers.email}
 `;
 
@@ -74,6 +74,11 @@ inquirer
             type: 'input',
             name: 'contribution',
             message: 'What are the contribution guidelines?',
+        },
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'What are the test instructions?',
         },
         {
             type: 'list',
