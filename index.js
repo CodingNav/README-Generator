@@ -10,12 +10,12 @@ const generateREADME = (answers) =>
 ${answers.description}
 
 ## Table of Contents
-* Installation
-* Usage
-* Contribution
-* Test
-* License
-* Questions
+* <a href="#installation">Installation</a>
+* <a href="#usage">Usage</a>
+* <a href="#contribution">Contribution</a>
+* <a href="#tests">Test</a>
+* <a href="#license">License</a>
+* <a href="#questions">Questions</a>
 
 ## Installation
 ${answers.installation}
