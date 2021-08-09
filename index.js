@@ -4,9 +4,11 @@ const fs = require('fs');
 const generateREADME = (answers) =>
 `
 <i>${answers.license}</i>
-## Description
+# ${answers.projectName}
 
+## Description
 ${answers.description}
+
 ## Table of Contents
 * Installation
 * Usage
@@ -50,6 +52,11 @@ inquirer
         },
         {
             type: 'input',
+            name: 'projectName',
+            message: 'What is the name of your project?',
+        },
+        {
+            type: 'input',
             name: 'description',
             message: 'What is the description of your project?',
         },
@@ -75,3 +82,10 @@ inquirer
             choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0'],
         },
     ])
+    .then((answers) => {
+        const readmeContent = generateREADME(answers);
+    
+        fs.writeFile('README.md', readmeContent, (err) =>
+          err ? console.log(err) : console.log('Successfully created README!')
+        );
+      });
