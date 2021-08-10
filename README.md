@@ -7,7 +7,6 @@
 * <a href="#preview">Preview</a>
 * <a href="#installation">Installation</a>
 * <a href="#usage">Usage</a>
-* <a href="#tests">Test</a>
 * <a href="#license">License</a>
 * <a href="#questions">Questions</a>
 * <a href="#technologies">Technologies</a>
@@ -16,10 +15,9 @@
 <b>README Generator</b> is a command-line application that accepts user input and generates a professional README for a new project.
 ​
 ## Preview
-<img src="./images/terminal.png" width="49%"/>
-<img src="./images/readme.png" width="49%"/>
+<img src="./images/terminal.png" align="middle" width="45%"/>&nbsp; &nbsp; &nbsp;<img src="./images/readme.png" align="middle" width="45%"/>
 
-​https://user-images.githubusercontent.com/58195156/128802247-f0a1c46a-2983-4194-9ab6-534f002f2b33.mov
+https://user-images.githubusercontent.com/58195156/128802848-a526d0e3-bb86-4a04-988d-85e1c298cebc.mov
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine to be able to create your own READMEs easily.
