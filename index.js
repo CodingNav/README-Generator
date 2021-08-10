@@ -92,7 +92,7 @@ inquirer
     .then((answers) => {
         const readmeContent = generateREADME(answers);
 
-        fs.writeFile('testREADME.md', readmeContent, (err) =>
-            err ? console.log(err) : console.log('Successfully created README!')
+        fs.writeFile('README.md', readmeContent, (err) =>
+            err ? console.log(err) : console.log('\x1b[32m%s\x1b[0m', 'Successfully created README!')
         );
     });
