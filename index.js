@@ -1,9 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const licenses = require('./licenses');
 
 const generateREADME = (answers) =>
-`
-<i style="float: right;">${answers.license}</i>
+    `
+<i style="float: right;">${answers.license.badge}</i>
 # ${answers.projectName}
 
 ## Description
@@ -30,10 +31,11 @@ ${answers.contribution}
 ${answers.tests}
 
 ## License
-The application is covered under ${answers.license}
+The application is covered under the ${answers.license.display}.
 
 ## Questions
 <b>${answers.username}</b> <br>
+https://github.com/${answers.username}/ <br>
 You can reach me with additional questions at: <br>
 ${answers.email}
 `;
@@ -84,13 +86,13 @@ inquirer
             type: 'list',
             name: 'license',
             message: 'Pick a license for the project',
-            choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0'],
+            choices: licenses
         },
     ])
     .then((answers) => {
         const readmeContent = generateREADME(answers);
-    
-        fs.writeFile('README.md', readmeContent, (err) =>
-          err ? console.log(err) : console.log('Successfully created README!')
+
+        fs.writeFile('testREADME.md', readmeContent, (err) =>
+            err ? console.log(err) : console.log('Successfully created README!')
         );
-      });
+    });
